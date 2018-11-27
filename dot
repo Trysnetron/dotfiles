@@ -1,0 +1,18 @@
+#!/bin/bash
+# Dotfile save/load script
+
+if [ "$1" = "save" ]; then
+    cp ~/.Xresources ./files/.Xresources
+    cp -r ~/.config/awesome ./files/awesome
+    cp ~/.bashrc ./files/.bashrc
+    
+    echo "Files saved into files directory, remember to git commit!\n"
+elif [ "$1" = "load" ]; then
+    cp ./files/.Xresources ~/.Xresources
+    cp -r ./files/awesome ~/.config/awesome
+    cp ./files/.bashrc ~/.bashrc
+else
+    echo "Useage:"
+    echo "\"dot save\" saves dotfiles to the files directory"
+    echo "\"dot load\" loads (overwrites) dotfiles from files directory to computer"
+fi
