@@ -4,26 +4,45 @@
 
 local xresources = require("beautiful.xresources")
 local xtheme = xresources.get_current_theme()
+local xcolor = {}
+    xcolor.dblack    = xtheme.color0
+    xcolor.lblack    = xtheme.color8
+    xcolor.dred      = xtheme.color1
+    xcolor.lred      = xtheme.color9
+    xcolor.dgreen    = xtheme.color2
+    xcolor.lgreen    = xtheme.color10
+    xcolor.dyellow   = xtheme.color3
+    xcolor.lyelow    = xtheme.color11
+    xcolor.dblue     = xtheme.color4
+    xcolor.lblue     = xtheme.color12
+    xcolor.dmagenta  = xtheme.color5
+    xcolor.lmagenta  = xtheme.color13
+    xcolor.dcyan     = xtheme.color6
+    xcolor.lcyan     = xtheme.color14
+    xcolor.dwhite    = xtheme.color7
+    xcolor.lwhite    = xtheme.color15
 
 theme = {}
 
-theme.font          = "monospace 9"
+theme.font          = "IBM Plex Mono 10"
 
-theme.bg_normal     = xtheme.background
-theme.bg_focus      = xtheme.foreground
-theme.bg_urgent     = xtheme.color1
-theme.bg_minimize   = xtheme.color7
-theme.bg_systray    = xtheme.background
+theme.bg_normal     = xcolor.lblue
+theme.bg_focus      = xcolor.lwhite
+theme.bg_urgent     = xcolor.lred
+theme.bg_minimize   = xcolor.dblue
+theme.bg_systray    = xcolor.dgreen
 
-theme.fg_normal     = xtheme.foreground
-theme.fg_focus      = xtheme.color15
-theme.fg_urgent     = xtheme.color15
-theme.fg_minimize   = xtheme.color15
+theme.fg_normal     = xcolor.lwhite
+theme.fg_focus      = xcolor.lblue
+theme.fg_urgent     = xcolor.lwhite
+theme.fg_minimize   = xcolor.dblack
 
-theme.border_width  = 1
-theme.border_normal = xtheme.background
-theme.border_focus  = xtheme.foreground
-theme.border_marked = xtheme.color1
+theme.border_width  = 2 
+theme.border_normal = xcolor.dblue
+theme.border_focus  = xcolor.lblue
+theme.border_marked = xcolor.lred
+
+theme.useless_gap = 0
 
 -- There are other variable sets
 -- overriding the default one when
@@ -98,7 +117,7 @@ theme.awesome_icon = "/usr/share/awesome/icons/awesome16.png"
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
 theme.icon_theme = nil
 
-theme.useless_gap = 10
+
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
